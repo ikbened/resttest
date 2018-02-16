@@ -5,3 +5,25 @@ build:
         name: run the test.
         code: |
           mvn test
+
+build-docker-image:
+  box:
+    id: tomcat
+    username: $DOCKER_HUB_USERNAME
+    password: $DOCKER_HUB_PASSWORD
+  steps:
+    - script:
+        name: run the test
+        code: |
+          mvn test
+    - internal/docker-push:
+        registry: $DOCKER_HUB_REGISTRY
+        author: edhi
+        tag: $DOCKER_HUB_TAG
+        username: $DOCKER_HUB_USERNAME
+        password: $DOCKER_HUB_PASSWORD
+        repository: $DOCKER_HUB_REPO
+        ports: $DOCKER_PORT
+        user: root
+        working-dir: /usr/local/tomcat
+        entrypoint: "/usr/local/tomcat/bin/catalina.sh run"
