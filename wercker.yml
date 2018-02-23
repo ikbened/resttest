@@ -1,5 +1,10 @@
 box: maven:latest
 
+Build:
+  steps:
+    - script:
+        name: Do nothing
+
 build-docker-image:
   box:
     id: resttest
