@@ -1,6 +1,6 @@
 box: maven:latest
 
-Build:
+build:
   steps:
     - script:
         name: Do nothing
