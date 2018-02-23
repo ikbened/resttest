@@ -26,6 +26,6 @@ build-docker-image:
 test:
   steps:
     - script:
-        name: run test
-          code: |
-            mvn test
+      name: run test
+        code: |
+          mvn test
