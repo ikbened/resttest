@@ -1,10 +1,5 @@
 box: maven:latest
 
-build:
-  steps:
-    - script:
-        name: Do nothing...
-
 build-docker-test:
   box:
     id: maven:latest
