@@ -66,7 +66,7 @@ public class AppTest {
             then().assertThat().body("[0].firstName", equalTo("Nabi"))
             .and().assertThat().body("[0].lastName", equalTo("Zamani"));
     }
-    
+
     @Test
     public void alwaysOK(){
         Assert.assertTrue(true);
