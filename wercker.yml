@@ -5,7 +5,7 @@ build:
     - script:
         name: Do nothing
 
-build-docker-image:
+build-docker-test:
   box:
     id: maven:latest
     username: $DOCKER_HUB_USERNAME
