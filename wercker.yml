@@ -3,7 +3,7 @@ box: maven:latest
 build:
   steps:
     - script:
-        name: Do nothing
+        name: Do nothing...
 
 build-docker-image:
   box:
