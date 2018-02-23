@@ -20,5 +20,5 @@ build-docker-test:
         repository: $DOCKER_HUB_REPO
         ports: $DOCKER_PORT
         user: root
-        working-dir: /usr/local/
+        working-dir: /pipeline/source
         entrypoint: "mvn test"
