@@ -7,7 +7,7 @@ build:
 
 build-docker-image:
   box:
-    id: resttest
+    id: maven:latest
     username: $DOCKER_HUB_USERNAME
     password: $DOCKER_HUB_PASSWORD
   steps:
@@ -21,11 +21,4 @@ build-docker-image:
         ports: $DOCKER_PORT
         user: root
         working-dir: /usr/local/
-        #entrypoint: "/usr/local/tomcat/bin/catalina.sh run"
-
-test:
-  steps:
-    - script:
-        name: run test
-        code: |
-          mvn test
+        entrypoint: "mvn test"
