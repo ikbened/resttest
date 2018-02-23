@@ -1,16 +1,11 @@
-box: maven:3.5-jdk-8
+box: maven:latest
 
 build-docker-image:
   box:
-    id: tomcat
+    id: resttest
     username: $DOCKER_HUB_USERNAME
     password: $DOCKER_HUB_PASSWORD
   steps:
-    - script:
-        name: run the test
-        code: |
-          cd /pipeline/source
-          mvn test
     - internal/docker-push:
         registry: $DOCKER_HUB_REGISTRY
         author: edhi
@@ -20,5 +15,12 @@ build-docker-image:
         repository: $DOCKER_HUB_REPO
         ports: $DOCKER_PORT
         user: root
-        working-dir: /usr/local/tomcat
-        entrypoint: "/usr/local/tomcat/bin/catalina.sh run"
+        working-dir: /usr/local/
+        #entrypoint: "/usr/local/tomcat/bin/catalina.sh run"
+
+deploy:
+    after-steps:
+        - script:
+          name: run test
+          code: |
+            mvn test
