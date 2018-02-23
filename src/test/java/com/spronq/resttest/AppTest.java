@@ -1,6 +1,7 @@
 package com.spronq.resttest;
 
 import io.restassured.RestAssured;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 import static org.hamcrest.Matchers.*;
@@ -65,5 +66,11 @@ public class AppTest {
             then().assertThat().body("[0].firstName", equalTo("Nabi"))
             .and().assertThat().body("[0].lastName", equalTo("Zamani"));
     }
+    
+    @Test
+    public void alwaysOK(){
+        Assert.assertTrue(true);
+    }
+
 
 }
