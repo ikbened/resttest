@@ -3,7 +3,7 @@ box: maven:latest
 build:
   steps:
     - script:
-        name: Do nothing.
+        name: Do nothing
 
 build-docker-image:
   box:
@@ -23,9 +23,9 @@ build-docker-image:
         working-dir: /usr/local/
         #entrypoint: "/usr/local/tomcat/bin/catalina.sh run"
 
-deploy:
-    after-steps:
-        - script:
-          name: run test
+test:
+  steps:
+    - script:
+        name: run test
           code: |
             mvn test
