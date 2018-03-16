@@ -15,7 +15,7 @@ public class GoogleWebTest {
     @Test
     public static void SearchSpronq() {
         FirefoxOptions options = new FirefoxOptions();
-        options.setHeadless(false);
+        options.setHeadless(true);
         FirefoxDriver driver = new FirefoxDriver(options);
         driver.get("https://google.com");
 
