@@ -16,4 +16,4 @@ build-docker-test:
         ports: $DOCKER_PORT
         user: root
         working-dir: /pipeline/source
-        entrypoint: "./polling.sh"
+        entrypoint: "./runMvnTestWhenUp.sh"
