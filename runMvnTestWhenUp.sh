@@ -3,7 +3,8 @@ while [ "$i" -lt "60" ]
 do
   echo "$i"
   var=$(curl -Is http://localhost:9000 | head -n 1)
-
+  var="HTTP/1.1 200 OK"
+  
   if [ -n "$var" ]; then
       var=$(pwd)
 
